@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Array Destructuring</title>
+</head>
+<body>
+    <h1>Random String Selector</h1>
+
+    <script>
+        // Create an array of strings with different lengths
+        const words = ["Hi", "JavaScript", "Book", "Programming", "Cat"];
+
+        // Check that the array is not empty
+        if (words.length > 0) {
+            // 1. Generate a random index
+            const randomIndex = Math.floor(Math.random() * words.length);
+
+            // 2. Extract the string using array destructuring
+            const [selectedString] = words.slice(randomIndex);
+
+            // 3. Display the selected string in the console
+            console.log("Random string:", selectedString);
+        } else {
+            console.log("The array is empty.");
+        }
+
+        // Handle undefined values when destructuring
+        const shortArray = ["Hello"];
+        const [first, second, third] = shortArray;
+
+        console.log(first);
+        console.log(second ?? "No second item available");
+        console.log(third ?? "No third item available");
+    </script>
+</body>
+</html>
